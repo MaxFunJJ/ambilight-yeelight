@@ -1,8 +1,10 @@
 {
   "domain": "philips_ambilight+yeelight",
   "name": "Philips Ambilight+Yeelight",
-  "documentation": "https://github.com/jomwells/ambilight-yeelight",
+  "version": "20220901",
+  "documentation": "https://github.com/MaxFunJJ/ambilight-yeelight",
   "dependencies": [],
-  "codeowners": ["@jomwells"],
-  "requirements": []
+  "codeowners": ["@jomwells","@MaxFunJJ"],
+  "requirements": [],
+  "iot_class": "local_polling"
 }
