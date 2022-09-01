@@ -24,12 +24,18 @@ If you have not setup any other Philips TV components, use the tool linked in th
 ```
 switch:
   - platform: philips_ambilight+yeelight
-    name: Lounge Lamp (Top Right) # (Name in Front-End)
     host: 192.168.1.XXX # (the TV)
     username: !secret philips_username
     password: !secret philips_password
-    address: 192.168.1.XXX # (The Bulb)
-    display_options: right-top
+    lights:
+      ambi_righttop:
+        name: Lounge Lamp (Top Right) # (Name in Front-End)
+        address: 192.168.1.XX1, 192.168.1.xx2 # (The Bulbs)
+        display_options: right-top
+      ambi_left:
+        name: Lounge Lamp (Left) # (Name in Front-End)
+        address: 192.168.1.XX5 # (The Bulbs)
+        display_options: left
 ```
 
 
