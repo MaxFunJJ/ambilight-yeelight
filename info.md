@@ -8,19 +8,36 @@ This new (and pretty unrefined) component mimics surprisingly well the funtional
 >### Potential Epilepsy Warning:
 >At times when testing this component (usually when the TV is displaying an ambient light / no colour), the bulb is still updated rapidly and can cause a noticeable flicker - if you have Epilepsy this may not be for you. (Yet) If anyone can find more optimal values to solve this, I would be very grateful (see Lines 83, 314, 316 etc).
 
-## Configuration
+## Installation
 
-If you have not setup any other Philips TV components, use the tool linked in the [Ambilight (Light) component](https://github.com/jomwells/ambilights) docs to obtain your username and password.
+#### Option 1: (recommended)
+This repository is compatible with the Home Assistant Community Store ([HACS](https://community.home-assistant.io/t/custom-component-hacs/121727)).
+
+After installing HACS, install 'Philips Ambilight+Yeelight' from the store, and use the ```configuration.yaml``` example below.
+
+
+#### Option 2: (manual)
+If you have already set up the [Ambilight (Light) component](https://github.com/jomwells/ambilights), installing this component is very simple, copy the ```philips_ambilight+yeelight``` directory into your ```config/custom_components/``` directory,
+enter the same username and password as for the ambilight component in the configuration.yaml, along with both the IP of the TV, and the IP of the bulb as follows, and restart home assistant:
+
+If you have not setup any other Philips TV components, use the tool linked in the Ambilight (Light) component docs to obtain your username and password.
 ```
 switch:
   - platform: philips_ambilight+yeelight
-    name: Lounge Lamp (Top Right) # (Name in Front-End)
     host: 192.168.1.XXX # (the TV)
     username: !secret philips_username
     password: !secret philips_password
-    address: 192.168.1.XXX # (The Bulb)
-    display_options: right-top
+    lights:
+      ambi_righttop:
+        name: Lounge Lamp (Top Right) # (Name in Front-End)
+        address: 192.168.1.XX1, 192.168.1.xx2 # (The Bulbs)
+        display_options: right-top
+      ambi_left:
+        name: Lounge Lamp (Left) # (Name in Front-End)
+        address: 192.168.1.XX5 # (The Bulbs)
+        display_options: left
 ```
+
 
 The per-bulb positions I have added (defined by ```display_options```) are as follows:
 
