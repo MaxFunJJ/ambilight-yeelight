@@ -1,7 +1,7 @@
 {
   "domain": "philips_ambilight+yeelight",
   "name": "Philips Ambilight+Yeelight",
-  "version": "20220901",
+  "version": "20220929",
   "documentation": "https://github.com/MaxFunJJ/ambilight-yeelight",
   "dependencies": [],
   "codeowners": ["@jomwells","@MaxFunJJ"],
