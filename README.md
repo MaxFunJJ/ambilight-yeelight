@@ -28,14 +28,31 @@ switch:
     username: !secret philips_username
     password: !secret philips_password
     lights:
-      ambi_righttop:
-        name: Lounge Lamp (Top Right) # (Name in Front-End)
-        address: 192.168.1.XX1, 192.168.1.xx2 # (The Bulbs)
-        display_options: right-top
-      ambi_left:
-        name: Lounge Lamp (Left) # (Name in Front-End)
-        address: 192.168.1.XX5 # (The Bulbs)
-        display_options: left
+      ambilight_sta_lamp:
+        name: Ambilight Sta Lamp
+        yeelights: 192.168.2.7
+        ambi_region: left-average
+      ambilight_sta_lamp_2:
+        name: Ambilight Sta Lamp 2
+        yeelights: 192.168.2.8
+        ambi_region: top-average
+      ambilight_sta_lamp_3:
+        name: Ambilight Sta Lamp 3
+        yeelights: 192.168.2.9
+        ambi_region: right-average
+      ambilight_ledstrip:
+        name: Ambilight led strip
+        lights_rgb: 
+          - light.led_strip
+        ambi_region: right-average
+        min_brightness: 7
+      ambilight_eettafel:
+        name: Ambilight eettafel
+        lights_ct: 
+          - light.flush_dimmer
+        ambi_region: left-average
+        max_brightness: 50
+        
 ```
 
 
